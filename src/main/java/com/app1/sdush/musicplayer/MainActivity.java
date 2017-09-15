@@ -103,11 +103,15 @@ public class MainActivity extends AppCompatActivity {
         if(songCursor != null && songCursor.moveToFirst()){
             int songTitle = songCursor.getColumnIndex(MediaStore.Audio.Media.TITLE);
             int songArtist = songCursor.getColumnIndex(MediaStore.Audio.Media.ARTIST);
+            int songAlbum = songCursor.getColumnIndex(MediaStore.Audio.Media.ALBUM);
+            int songLocation = songCursor.getColumnIndex(MediaStore.Audio.Media.DATA);
 
             do{
                 String currentTitle = songCursor.getString(songTitle);
                 String currentArtist = songCursor.getString(songArtist);
-                arrayList.add(currentTitle + "\n" + currentArtist);
+                String currentAlbum = songCursor.getString(songAlbum);
+                String currentLocation = songCursor.getString(songLocation);
+                arrayList.add(currentTitle + ";;" + currentArtist + ";;" + currentAlbum + ";;" + currentLocation);
             } while(songCursor.moveToNext());
         }
     }
