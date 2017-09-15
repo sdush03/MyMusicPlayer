@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 else if(i==2){
                     //Browse
                     Intent intent = new Intent(getApplicationContext(), Player.class);
+                    intent.putExtra("song",arrayList.get(0));
                     startActivity(intent);
                 }
                 else if(i==3){
