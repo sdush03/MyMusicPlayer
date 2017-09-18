@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 if(i==0){
                     //all_songs
                     Intent intent = new Intent(getApplicationContext(), AllSongs.class);
+                    intent.putExtra("allsongs", arrayList);
                     startActivity(intent);
                 }
                 else if(i==1){
